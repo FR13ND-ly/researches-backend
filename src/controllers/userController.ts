@@ -4,7 +4,7 @@ import { UserModel } from "../models/UserModel";
 
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
   try {
-    const users = await UserModel.find().select("-password"); // Exclude passwords from the response
+    const users = await UserModel.find().select("-password");
     res.status(200).json(users);
   } catch (error) {
     console.error("Error fetching users:", error);
